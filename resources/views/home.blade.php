@@ -21,7 +21,7 @@
                 <div class="project-card">
 {{--                    <div class="project-image">{{$proyecto->image}}</div>--}}
                     <div class="project-image">
-                        <img src="{{ asset('images') . '/' . $proyecto->url_imagen}}" alt="prueba"></div>
+                        <img src="{{ $proyecto->full_url_imagen}}" alt="prueba"></div>
                     <div class="project-info">
                         <h3>{{$proyecto->nombre}}</h3>
                         <p>{{$proyecto->descripcion_corta}}</p>

@@ -10,7 +10,7 @@ class IndexController extends Controller
 {
     public function home(){
 
-        $proyectos = Proyecto::all();
+        $proyectos = Proyecto::latest()->limit(3)->get();
 
         return view('home', [
             'proyectos' => $proyectos,

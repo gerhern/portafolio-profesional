@@ -25,7 +25,7 @@ class ProyectoRequest extends FormRequest
             'nombre' => ['required','min:3','max:50'],
             'descripcion' => ['required','min:10','max:255'],
             'descripcion_corta' => ['required','min:10','max:100'],
-            'url_imagen' => ['required', 'string', 'max:255'],
+            'url_imagen' => $this->isMethod('PUT') ? ['nullable', 'image'] : ['required', 'image'],
         ];
     }
 
@@ -40,9 +40,8 @@ class ProyectoRequest extends FormRequest
             'descripcion_corta.required' => 'La descripción corta es obligatoria.',
             'descripcion_corta.min' => 'La descripción corta debe tener al menos 10 caracteres.',
             'descripcion_corta.max' => 'La descripción corta no puede tener más de 100 caracteres.',
-            'url_imagen.required' => 'La ruta de imagen es obligatoria.',
-            'url_imagen.string' => 'La ruta de imagen debe ser una cadena.',
-            'url_imagen.max' => 'La ruta de imagen no puede tener más de 255 caracteres.',
+            'url_imagen.required' => 'La imagen es obligatoria.',
+            'url_imagen.image' =>  'La imagen debe ser un archivo de imagen valido.',
         ];
     }
 }

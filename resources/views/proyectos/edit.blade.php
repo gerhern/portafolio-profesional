@@ -8,7 +8,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <form action="{{route('update.proyecto', $proyecto)}}" method="POST">
+                    <form action="{{route('update.proyecto', $proyecto)}}" method="POST" enctype="multipart/form-data" >
                         @csrf
                         @method('PUT')
                         <div class="mb-4">
@@ -56,13 +56,24 @@
                                 Imagen del Proyecto
                             </label>
                             <input
-                                type="text"
+                                type="file"
                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md dark:border-gray-600"
-                                placeholder="URL de la imagen del proyecto"
                                 name="url_imagen"
-                                value="{{old('url_imagen', $proyecto->url_imagen) ?? '' }}"
                             />
                         </div>
+
+{{--                        <div class="mb-4">--}}
+{{--                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-400">--}}
+{{--                                Imagen del Proyecto--}}
+{{--                            </label>--}}
+{{--                            <input--}}
+{{--                                type="text"--}}
+{{--                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md dark:border-gray-600"--}}
+{{--                                placeholder="URL de la imagen del proyecto"--}}
+{{--                                name="url_imagen"--}}
+{{--                                value="{{old('url_imagen', $proyecto->url_imagen) ?? '' }}"--}}
+{{--                            />--}}
+{{--                        </div>--}}
 
                         <div class="flex items-center justify-end mt-6">
                             <button
