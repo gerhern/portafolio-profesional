@@ -21,7 +21,7 @@
                 <div class="project-card">
 {{--                    <div class="project-image">{{$proyecto->image}}</div>--}}
                     <div class="project-image">
-                        <img src="{{$proyecto->url_imagen}}" alt="prueba"></div>
+                        <img src="{{ asset('images') . '/' . $proyecto->url_imagen}}" alt="prueba"></div>
                     <div class="project-info">
                         <h3>{{$proyecto->nombre}}</h3>
                         <p>{{$proyecto->descripcion_corta}}</p>
@@ -45,19 +45,19 @@
             <div class="skills-grid">
                 <div class="skill-item">
                     <h3>Frontend</h3>
-                    <p>{{$habilidades->front ?? 'Sin Datos'}}</p>
+                    <p>Html5 Js Angular</p>
                 </div>
                 <div class="skill-item">
                     <h3>Backend</h3>
-                    <p>{{$habilidades->back ?? 'Sin Datos'}}</p>
+                    <p>Php Laravel </p>
                 </div>
                 <div class="skill-item">
                     <h3>Database</h3>
-                    <p>{{$habilidades->data ?? 'Sin Datos'}}</p>
+                    <p>Postgresql Mysql SqlServer</p>
                 </div>
                 <div class="skill-item">
                     <h3>DevOps</h3>
-                    <p>{{$habilidades->dev ?? 'Sin Datos'}}</p>
+                    <p>Linux</p>
                 </div>
             </div>
         </div>

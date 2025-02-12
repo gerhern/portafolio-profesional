@@ -189,6 +189,13 @@
             justify-content: center;
         }
 
+        .project-image img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 15px;
+        }
+
         .project-info {
             padding: 1.5rem;
         }
