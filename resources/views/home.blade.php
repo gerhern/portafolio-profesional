@@ -1,5 +1,4 @@
 @extends('layout')
-
 @section('content')
     <section class="hero" id="inicio">
         <div class="hero-content">
@@ -12,7 +11,6 @@
             </div>
             <div class="hero-image">
                 <img src="{{asset('images/profile.jpg')}}" alt="Foto de perfil">
-{{--                <img src="https://picsum.photos/id/433/300" alt="Foto de perfil">--}}
             </div>
         </div>
     </section>
@@ -21,10 +19,12 @@
         <div class="projects-grid">
             @forelse($proyectos as $proyecto)
                 <div class="project-card">
-                    <div class="project-image">{{$proyecto->image}}</div>
+{{--                    <div class="project-image">{{$proyecto->image}}</div>--}}
+                    <div class="project-image">
+                        <img src="{{$proyecto->url_imagen}}" alt="prueba"></div>
                     <div class="project-info">
                         <h3>{{$proyecto->nombre}}</h3>
-                        <p>{{$proyecto->descripcionCorta}}</p>
+                        <p>{{$proyecto->descripcion_corta}}</p>
                     </div>
                 </div>
             @empty
