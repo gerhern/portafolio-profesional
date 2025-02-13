@@ -14,8 +14,8 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center">
         <div class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent">Portafolio</div>
         <div class="space-x-8">
-            <a href="#inicio" class="text-white hover:text-blue-500 transition-colors">Inicio</a>
-            <a href="#proyectos" class="text-white hover:text-blue-500 transition-colors">Proyectos</a>
+            <a href="{{ route('home') }}" class="text-white hover:text-blue-500 transition-colors">Inicio</a>
+            <a href="{{ route('proyectos.guest') }}" class="text-white hover:text-blue-500 transition-colors">Proyectos</a>
             <a href="#habilidades" class="text-white hover:text-blue-500 transition-colors">Habilidades</a>
             <a href="#contacto" class="text-white hover:text-blue-500 transition-colors">Contacto</a>
         </div>

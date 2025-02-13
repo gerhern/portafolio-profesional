@@ -17,6 +17,15 @@ class IndexController extends Controller
         ]);
     }
 
+    public function proyectos(){
+        $proyectos = Proyecto::with('tecnologias')->get();
+
+        return view('guest.proyectos', [
+            'proyectos' => $proyectos,
+            'certificaciones' => []
+        ]);
+    }
+
     public function dashboard(){
         $countProyectos = Proyecto::count();
         return view('dashboard', [

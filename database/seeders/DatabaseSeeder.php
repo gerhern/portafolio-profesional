@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\catTipoHabilidad;
 use App\Models\Habilidad;
 use App\Models\Proyecto;
+use App\Models\Tecnologia;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -21,6 +22,25 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        $tecnologias = [
+            'Html5',//1
+            'CSS3',
+            'JavaScript',//3
+            'PHP',
+            'Composer',//5
+            'Laravel',
+            'MySQL',//7
+            'TailwindCss',
+            'Bootstrap',//9
+            'PostgreSQL',
+        ];
+
+        foreach ($tecnologias as $tecnologia) {
+            Tecnologia::create([
+                'nombre' => $tecnologia,
+            ]);
+        }
 
         Proyecto::create([
             'nombre' => 'Control de activos',
@@ -58,8 +78,30 @@ Una de las funciones de este proyecto es que permite a los usuarios visualizar u
             'created_at'        =>  '2023-11-29 12:00:00'
         ]);
 
+        $dorothy = [6,8,7,4,3,1];
+        $calculadora = [4,7,6,3,8,1];
+        $credencializacion = [6,4,3,10,1,2];
 
+        foreach($dorothy as $tech){
+            \DB::table('proyecto_tecnologia')->insert([
+                'proyecto_id' => 1,
+                'tecnologia_id' => $tech,
+            ]);
+        }
 
+        foreach($calculadora as $tech){
+            \DB::table('proyecto_tecnologia')->insert([
+                'proyecto_id' => 2,
+                'tecnologia_id' => $tech,
+            ]);
+        }
+
+        foreach($credencializacion as $tech){
+            \DB::table('proyecto_tecnologia')->insert([
+                'proyecto_id' => 3,
+                'tecnologia_id' => $tech,
+            ]);
+        }
 
     }
 }

@@ -23,4 +23,8 @@ class Proyecto extends Model
             get: fn (mixed $value, array $attributes) => Storage::disk('proyecto')->url($attributes['url_imagen']),
         );
     }
+
+    public function tecnologias(){
+        return $this->belongsToMany(Tecnologia::class);
+    }
 }

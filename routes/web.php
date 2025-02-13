@@ -4,6 +4,7 @@ use App\Http\Controllers\{ProfileController, IndexController, ProyectoController
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'home'])->name('home');
+Route::get('proyectos', [IndexController::class, 'proyectos'])->name('proyectos.guest');
 
 Route::prefix('carmine')->middleware('auth')->group(function () {
     Route::get('/dashboard', [IndexController::class, 'dashboard'])->name('dashboard');
