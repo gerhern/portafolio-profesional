@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certificacion;
 use App\Models\Habilidad;
 use App\Models\Proyecto;
 use Illuminate\Http\Request;
@@ -19,10 +20,11 @@ class IndexController extends Controller
 
     public function proyectos(){
         $proyectos = Proyecto::with('tecnologias')->get();
+        $certificaciones = Certificacion::all();
 
         return view('guest.proyectos', [
             'proyectos' => $proyectos,
-            'certificaciones' => []
+            'certificaciones' => $certificaciones
         ]);
     }
 

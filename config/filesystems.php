@@ -45,6 +45,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'certificaciones' => [
+            'driver' => 'local',
+            'root' => storage_path('app/certificaciones'),
+            'url' => env('APP_URL').'/certificaciones',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -83,6 +90,7 @@ return [
     'links' => [
 //        public_path('storage') => storage_path('app/public'),
         public_path('proyecto') => storage_path('app/proyecto'),
+        public_path('certificaciones') => storage_path('app/certificaciones'),
     ],
 
 ];

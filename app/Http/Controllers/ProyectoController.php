@@ -51,11 +51,11 @@ class ProyectoController extends Controller
 
         $proyecto = Proyecto::find($id);
 
-//        $proyecto->update([
-//            'nombre' => $request->nombre,
-//            'descripcion' => $request->descripcion,
-//            'descripcion_corta' => $request->descripcion_corta,
-//        ]);
+        $proyecto->update([
+            'nombre' => $request->nombre,
+            'descripcion' => $request->descripcion,
+            'descripcion_corta' => $request->descripcion_corta,
+        ]);
 
         if($request->hasFile('url_imagen')){
             Storage::disk('proyecto')->delete($proyecto->url_imagen);

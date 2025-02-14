@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('proyectos')" :active="request()->routeIs('proyectos')">
                         {{ __('Proyectos') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('certificaciones')" :active="request()->routeIs('certificaciones')">
+                        {{ __('Certificaciones') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -75,6 +78,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('proyectos')" :active="request()->routeIs('proyectos')">
                 {{ __('Proyectos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('certificaciones')" :active="request()->routeIs('certificaciones')">
+                {{ __('Certificaciones') }}
             </x-responsive-nav-link>
         </div>
 

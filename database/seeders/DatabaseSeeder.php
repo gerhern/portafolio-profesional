@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\catTipoHabilidad;
+use App\Models\Certificacion;
 use App\Models\Habilidad;
 use App\Models\Proyecto;
 use App\Models\Tecnologia;
@@ -103,5 +104,11 @@ Una de las funciones de este proyecto es que permite a los usuarios visualizar u
             ]);
         }
 
+        Certificacion::create([
+            'nombre' => 'Ingeniería en Computación',
+            'institucion' => 'Universidad Nacional Autónoma de México',
+            'url_imagen' => 'Ingeniería_en_Computacion.jpg',
+            'fecha_emision' => '2024-06-06 12:00:00',
+        ]);
     }
 }

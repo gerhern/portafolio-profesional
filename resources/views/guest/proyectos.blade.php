@@ -60,32 +60,28 @@
                     @foreach ($certificaciones as $cert)
                         <div class="bg-gray-800/50 backdrop-blur-sm overflow-hidden rounded-lg p-6 transition duration-300 hover:bg-gray-800/70 border border-gray-700">
                             <div class="flex items-start gap-4">
-                                @if($cert->badge)
-                                    <img src="{{ asset('storage/' . $cert->badge) }}"
-                                         alt="{{ $cert->name }}"
+                                @if($cert->full_url_imagen)
+                                    <img src="{{ $cert->full_url_imagen }}"
+                                         alt="{{ $cert->nombre }}"
                                          class="w-16 h-16 object-contain">
                                 @endif
 
                                 <div class="flex-1">
                                     <h3 class="text-xl font-semibold text-white mb-2">
-                                        {{ $cert->name }}
+                                        {{ $cert->nombre }}
                                     </h3>
 
                                     <p class="text-gray-300 mb-2">
-                                        {{ $cert->issuer }}
+                                        {{ $cert->institucion }}
                                     </p>
 
                                     <div class="flex justify-between items-center">
                                     <span class="text-sm text-gray-400">
-                                        Expedición: {{ $cert->issue_date }}
-                                        @if($cert->expiry_date)
-                                            <span class="mx-2">•</span>
-                                            Vence: {{ $cert->expiry_date }}
-                                        @endif
+                                        Expedición: {{ $cert->fecha_emision }}
                                     </span>
 
-                                        @if($cert->credential_url)
-                                            <a href="{{ $cert->credential_url }}"
+                                        @if($cert->id)
+                                            <a href="#"
                                                target="_blank"
                                                class="text-blue-400 hover:text-blue-300 transition-colors">
                                                 Verificar →
