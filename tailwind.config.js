@@ -21,6 +21,10 @@ export default {
                     '100%': { opacity: '1', transform: 'translateY(0)' },
                 },
             },
+            animation: {
+                fadeInDown: 'fadeInDown 0.5s ease-out',
+                fadeInUp: 'fadeInUp 0.5s ease-out',
+            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },

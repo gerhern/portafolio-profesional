@@ -39,10 +39,10 @@
                                 <span class="text-sm text-gray-400">
                                     {{ $project->date }}
                                 </span>
-                                    <a href="#"
-                                       class="text-blue-400 hover:text-blue-300 transition-colors">
-                                        Ver más →
-                                    </a>
+{{--                                    <a href="#"--}}
+{{--                                       class="text-blue-400 hover:text-blue-300 transition-colors">--}}
+{{--                                        Ver más →--}}
+{{--                                    </a>--}}
                                 </div>
                             </div>
                         </div>
@@ -80,13 +80,13 @@
                                         Expedición: {{ $cert->fecha_emision }}
                                     </span>
 
-                                        @if($cert->id)
-                                            <a href="#"
-                                               target="_blank"
-                                               class="text-blue-400 hover:text-blue-300 transition-colors">
-                                                Verificar →
-                                            </a>
-                                        @endif
+{{--                                        @if($cert->id)--}}
+{{--                                            <a href="#"--}}
+{{--                                               target="_blank"--}}
+{{--                                               class="text-blue-400 hover:text-blue-300 transition-colors">--}}
+{{--                                                Verificar →--}}
+{{--                                            </a>--}}
+{{--                                        @endif--}}
                                     </div>
                                 </div>
                             </div>

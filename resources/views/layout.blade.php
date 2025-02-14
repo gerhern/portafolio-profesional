@@ -12,23 +12,17 @@
 
 <nav class="fixed top-0 w-full p-6 bg-gray-900/90 backdrop-blur-md z-50 animate-fadeInDown">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent">Portafolio</div>
+        <div class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text
+        text-transparent"><a href="{{route('home')}}">Portafolio</a></div>
         <div class="space-x-8">
             <a href="{{ route('home') }}" class="text-white hover:text-blue-500 transition-colors">Inicio</a>
             <a href="{{ route('proyectos.guest') }}" class="text-white hover:text-blue-500 transition-colors">Proyectos</a>
-            <a href="#habilidades" class="text-white hover:text-blue-500 transition-colors">Habilidades</a>
-            <a href="#contacto" class="text-white hover:text-blue-500 transition-colors">Contacto</a>
+{{--            <a href="#habilidades" class="text-white hover:text-blue-500 transition-colors">Habilidades</a>--}}
+            <a href="{{route('contacto.guest')}}" class="text-white hover:text-blue-500 transition-colors">Contacto</a>
         </div>
     </div>
 </nav>
 
 @yield('content')
-
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-
-    }
-</script>
 </body>
 </html>

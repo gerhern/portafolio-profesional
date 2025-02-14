@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\{ProfileController, IndexController, ProyectoController, CertificacionController};
+use App\Http\Controllers\{ProfileController, IndexController, ProyectoController, CertificacionController, ContactoController};
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'home'])->name('home');
 Route::get('proyectos', [IndexController::class, 'proyectos'])->name('proyectos.guest');
+Route::get('contacto', [IndexController::class, 'contacto'])->name('contacto.guest');
+Route::post('contacto-store', [ContactoController::class,'store'])->name('contacto.store');
 
 Route::prefix('carmine')->middleware('auth')->group(function () {
     Route::get('/dashboard', [IndexController::class, 'dashboard'])->name('dashboard');
@@ -22,6 +24,10 @@ Route::prefix('carmine')->middleware('auth')->group(function () {
     Route::get('certificacion-edit/{certificacion}', [CertificacionController::class, 'edit'])->name('edit.certificacion');
     Route::put('certificacion-update/{certificacion}', [CertificacionController::class, 'update'])->name('update.certificacion');
     Route::delete('certificacion-destroy/{certificacion}', [CertificacionController::class, 'destroy'])->name('destroy.certificacion');
+
+    Route::get('contacto', [ContactoController::class, 'index'])->name('contacto');
+    Route::get('contacto-show/{contacto}', [ContactoController::class,'show'])->name('show.contacto');
+    Route::delete('contacto-destroy/{contacto}', [ContactoController::class, 'destroy'])->name('destroy.contacto');
 });
 
 Route::middleware('auth')->group(function () {

@@ -62,19 +62,6 @@
                             />
                         </div>
 
-{{--                        <div class="mb-4">--}}
-{{--                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-400">--}}
-{{--                                Imagen del Proyecto--}}
-{{--                            </label>--}}
-{{--                            <input--}}
-{{--                                type="text"--}}
-{{--                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md dark:border-gray-600"--}}
-{{--                                placeholder="URL de la imagen del proyecto"--}}
-{{--                                name="url_imagen"--}}
-{{--                                value="{{ old('url_imagen')?? '' }}"--}}
-{{--                            />--}}
-{{--                        </div>--}}
-
                         <div class="flex items-center justify-end mt-6">
                             <button
                                 type="submit"

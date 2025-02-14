@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Certificacion;
+use App\Models\Contacto;
 use App\Models\Habilidad;
 use App\Models\Proyecto;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ class IndexController extends Controller
 
         $proyectos = Proyecto::latest()->limit(3)->get();
 
-        return view('home', [
+        return view('guest.home', [
             'proyectos' => $proyectos,
         ]);
     }
@@ -28,10 +29,18 @@ class IndexController extends Controller
         ]);
     }
 
+    public function contacto(){
+        return view('guest.contacto');
+    }
+
     public function dashboard(){
         $countProyectos = Proyecto::count();
+        $countCertificaciones = Certificacion::count();
+        $countMensajes = Contacto::count();
         return view('dashboard', [
-            'cantidadProyectos' => $countProyectos
+            'cantidadProyectos' => $countProyectos,
+            'cantidadCertificaciones' => $countCertificaciones,
+            'cantidadMensajes' => $countMensajes
         ]);
     }
 }
