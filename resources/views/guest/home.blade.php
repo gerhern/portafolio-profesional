@@ -100,6 +100,9 @@
                 <a href="https://github.com/gerhern" target="_blank" class="text-blue-400 hover:text-blue-300
                 transition-colors
                 text-lg">GitHub</a>
+                <a href="https://www.linkedin.com/in/gerardo-lópez-hernández-553561227" target="_blank" class="text-blue-400 hover:text-blue-300
+                transition-colors
+                text-lg">LinkedIn</a>
                 <a href="{{route('contacto.guest')}}" class="text-blue-400 hover:text-blue-300 transition-colors
                 text-lg">Contacto</a>
             </div>
