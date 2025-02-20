@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Broadcasting\TelegramChannel;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\ServiceProvider;
+use Telegram\Bot\Api;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +22,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Notification::extend('telegram', function($app){
+           return new TelegramChannel($app->make(Api::class));
+        });
     }
 }

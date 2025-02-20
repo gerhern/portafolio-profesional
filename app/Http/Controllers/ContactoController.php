@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactoRequest;
 use App\Models\Contacto;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notifiable;
 
 class ContactoController extends Controller
 {
+    use Notifiable;
     public function index(){
         $mensajes = Contacto::all();
         return view('contacto.index', ['mensajes' => $mensajes]);
@@ -21,6 +23,8 @@ class ContactoController extends Controller
             'email' => $request->email,
             'mensaje' => $request->mensaje,
          ]);
+
+        $this->notify(new \App\Notifications\Contacto(['nombre' => $request->nombre, 'mensaje' => $request->mensaje]) );
 
         return back()->with('success', 'Tu mensaje ha sido enviado correctamente');
     }
